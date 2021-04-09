@@ -27,6 +27,7 @@ collections:
           name: 'updatedDate',
           widget: 'datetime',
           format: 'YYYY-MM-DD',
+          default: '',
         }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
