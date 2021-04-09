@@ -31,6 +31,7 @@
     <title>{% if metaTitle %}{{ metaTitle }}{% else %}{{ title }}{% endif %}{% if metaTitle or title %} | {% endif %}{{ site.name }}</title>
 
     <link rel="stylesheet" href="{{ site.baseUrl }}assets/main.bundle.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     {% block head %}{% endblock %}
   </head>
@@ -44,5 +45,16 @@
     {% include 'privacy-notice.njk' %}
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="{{ site.baseUrl }}assets/main.bundle.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+  </script>
   </body>
 </html>
