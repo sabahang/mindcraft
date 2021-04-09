@@ -28,6 +28,6 @@ collections:
           widget: 'datetime',
           format: 'YYYY-MM-DD',
         }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
