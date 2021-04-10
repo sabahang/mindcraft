@@ -8,6 +8,7 @@ module.exports = (config) => {
 
   config.addPassthroughCopy({ public: './' });
   config.addPassthroughCopy('src/admin');
+  config.addPassthroughCopy({ 'src/images': './' });
 
   config.setBrowserSyncConfig({
     files: ['dist/**/*'],
